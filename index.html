@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothify</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- firebase links -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar1" id="home">
+        <div class="logo">
+          <h2><a href="/">CLOTHIFY</a></h2>
+        </div>
+        <div class="nav-options">
+          <div class="nav-home no">
+            <a href="#hero">Home</a>
+          </div>
+          <div class="nav-shop no">
+            <a href="#trending">Trending</a>
+          </div>
+          <div class="nav-contact no">
+            <a href="#new">New Arrivals</a>
+          </div>
+          <div class="nav-cart">
+            <a href="/checkout.html"><i class="fas fa-shopping-cart"></i> </a>
+          </div>
+        </div>
+        <div class="phone-no">
+          <a href="tel:+918146004250">+91 81460 04250</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-section" id="hero">
+      <p>STYLE THAT SPEAKS</p>
+      <h1>WEAR YOUR PERSONALITY</h1>
+      <p>Discover fashion that resonates with your lifestyle at Clothify.</p>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        onclick='window.location.href = "#trending"'
+      >
+        DISCOVER MORE
+      </button>
+    </div>
+
+    <div class="new-section">
+      <div class="box-1 new">
+        <p>NEW IN</p>
+        <h2>WOMEN'S</h2>
+        <button class="new-bt">SHOP NOW</button>
+      </div>
+      <div class="box-2 new">
+        <p>NEW IN</p>
+        <h2>MEN'S</h2>
+        <button class="new-bt">SHOP NOW</button>
+      </div>
+    </div>
+
+    <div class="trending-section" id="trending">
+      <div class="trending-heading">
+        <h2>TRENDING</h2>
+      </div>
+      <div>
+        <p style="text-align: center">Check out our trending items.</p>
+      </div>
+      <!-- <div class="trending-buttons">
+          <button class="all-bt trend-bt">ALL</button>
+          <button class="women-bt trend-bt">WOMEN</button>
+          <button class="men-bt trend-bt">MEN</button>
+        </div> -->
+      <div class="trending-container">
+        <div class="trend-box" id="trend-denims">
+          <img src="./images/product-1-1.jpg" alt="" />
+          <button class="cart-button" id="bt1" onclick="add('trend-denims')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Denim Jacket</p>
+            <p>Rs. 2320</p>
+          </div>
+        </div>
+        <div class="trend-box" id="trend-sandals">
+          <img src="./images/product-2-1.jpg" alt="" />
+          <button class="cart-button" id="bt2" onclick="add('trend-sandals')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Shoes</p>
+            <p>Sandals</p>
+            <p>Rs. 1700</p>
+          </div>
+        </div>
+        <div class="trend-box" id="trend-sweatshirt">
+          <img src="./images/product-3-1.jpg" alt="" />
+          <button
+            class="cart-button"
+            id="bt3"
+            onclick="add('trend-sweatshirt')"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Printed Sweatshirt</p>
+            <p>Rs. 3060</p>
+          </div>
+        </div>
+        <div class="trend-box" id="trend-trousers">
+          <img src="./images/product-4-1.jpg" alt="" />
+          <button class="cart-button" id="bt4" onclick="add('trend-trousers')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Linen-blend paper bag trousers</p>
+            <p>Rs. 2000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- qualities of website section -->
+    <div class="qualities">
+      <div class="quality-item">
+        <i class="fas fa-truck fa-2x"></i>
+        <p class="title">Payment & Delivery</p>
+        <p class="desc">Free shipping for orders over $50</p>
+      </div>
+
+      <div class="quality-item">
+        <i class="fas fa-sync fa-2x"></i>
+        <p class="title">Return & Refund</p>
+        <p class="desc">Free 100% money back guarantee</p>
+      </div>
+
+      <div class="quality-item">
+        <i class="fas fa-lock fa-2x"></i>
+        <p class="title">Secure Payment</p>
+        <p class="desc">100% secure payment</p>
+      </div>
+
+      <div class="quality-item">
+        <i class="fas fa-headphones fa-2x"></i>
+        <p class="title">Quality Support</p>
+        <p class="desc">Alway online feedback 24/7</p>
+      </div>
+    </div>
+
+    <!-- new arrivals section-->
+    <div class="new-arrivals" id="new">
+      <h2 style="text-align: center; margin-top: 5vh; color: rgb(51, 51, 51)">
+        NEW ARRIVALS
+      </h2>
+
+      <div class="arrival-container">
+        <div class="trend-box" id="tie-detail-top">
+          <img src="./images/product-5-2.jpg" alt="" />
+          <button class="cart-button" id="bt5" onclick="add('tie-detail-top')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Tie-detail Top</p>
+            <p>Rs. 399</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="sandals">
+          <img src="./images/product-6-1.jpg" alt="" />
+          <button class="cart-button" id="bt6" onclick="add('sandals')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Shoes</p>
+            <p>Sandals</p>
+            <p>Rs. 1299</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="small-bucket-bag">
+          <img src="./images/product-7-2.jpg" alt="" />
+          <button
+            class="cart-button"
+            id="bt7"
+            onclick="add('small-bucket-bag')"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Bags</p>
+            <p>Small Bucket Bag</p>
+            <p>Rs. 1499</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="denim-jacket">
+          <img src="./images/product-8-2.jpg" alt="" />
+          <button class="cart-button" id="bt8" onclick="add('denim-jacket')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Denim Jacket</p>
+            <p>Rs. 3499</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="short-wrap-dress">
+          <img src="./images/product-9-2.jpg" alt="" />
+          <button
+            class="cart-button"
+            id="bt9"
+            onclick="add('short-wrap-dress')"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Short Wrap Dress</p>
+            <p>Rs. 1799</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="biker-jacket">
+          <img src="./images/product-10-2.jpg" alt="" />
+          <button class="cart-button" id="bt10" onclick="add('biker-jacket')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Biker Jacket</p>
+            <p>Rs. 3499</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="loafer">
+          <img src="./images/product-11-1.jpg" alt="" />
+          <button class="cart-button" id="bt11" onclick="add('loafer')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Shoes</p>
+            <p>Loafers</p>
+            <p>Rs. 999</p>
+          </div>
+        </div>
+
+        <div class="trend-box" id="jeggings">
+          <img src="./images/product-12-2.jpg" alt="" />
+          <button class="cart-button" id="bt12" onclick="add('jeggings')">
+            <i class="fas fa-shopping-cart"></i>
+            Add to Cart
+          </button>
+          <div class="trending-text">
+            <p class="p-1">Clothing</p>
+            <p>Super Skinny High Jeggings</p>
+            <p>Rs. 1299</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  footer -->
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>CLOTHIFY</h2>
+          <p>
+            Step into a world where every outfit tells your story, crafted for
+            those who dare to be different.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="#hero">Home</a>
+            </li>
+            <li>
+              <a href="#trending">Trending</a>
+            </li>
+            <li>
+              <a href="#new">New Arrivals</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            <i class="fas fa-phone contact-icons"></i>
+            <a href="tel:+918146004250">8146004250</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope contact-icons"></i>
+            <a href="mailto:arshbedi2517@gmail.com">arshbedi2517@gmail.com</a>
+          </p>
+          <p>
+            <i class="fas fa-shopping-cart contact-icons"></i>
+            <a href="./checkout.html">Go to Cart</a>
+          </p>
+        </div>
+        <div class="footer-socials">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"></div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>

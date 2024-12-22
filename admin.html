@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+
+</head>
+<body>
+        <div id="credentials">
+            <input type="text" placeholder="Enter the username" id="adminUser">
+            <input type="text" placeholder="Enter the password" id="adminPass">
+            <button onclick="adminCheck()">Submit</button>
+        </div>
+
+        <div id="admin-box">
+            <div id="completed">
+                <h1>Completed</h1>
+            </div>
+            <div id="pending">
+                <h1>pending</h1>
+            </div>
+        </div>
+</body>
+<script src="main.js"></script>
+</html>

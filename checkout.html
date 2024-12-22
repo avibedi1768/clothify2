@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+  </head>
+  <body onload="checkoutLoader()">
+    <div id="components"></div>
+    <br />
+    <br />
+    <br />
+    <div id="total" style="text-align: center"></div>
+
+    <div id="checkout-form">
+      <label for="address">Enter address</label>
+      <br />
+      <input type="text" id="address" />
+
+      <br />
+      <br />
+
+      <label for="phone">Enter phone number</label>
+      <br />
+      <input type="text" id="phone" />
+      <br />
+      <br />
+
+      <label for="userEmail">Enter email</label>
+      <br />
+      <input type="text" id="userEmail" />
+      <br />
+      <br />
+
+      <button onclick="send()">Submit</button>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "8QE0JUuYknnjXO7RI",
+      });
+    })();
+  </script>
+  <script src="main.js"></script>
+</html>
